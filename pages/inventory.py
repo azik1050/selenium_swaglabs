@@ -26,4 +26,4 @@ class InventoryPage:
     @property
     def cart_link(self):
         link = self.browser.find_element(By.XPATH, "//span[@data-test='shopping-cart-badge']")
-        return link.text
+        return link

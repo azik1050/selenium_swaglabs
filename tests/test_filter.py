@@ -1,6 +1,6 @@
 import pytest
-from confest import browser
 from pages.inventory import InventoryPage
+from confest import browser
 
 
 @pytest.mark.parametrize(
@@ -9,6 +9,8 @@ from pages.inventory import InventoryPage
 def test_filter(browser, option):
     page = InventoryPage(browser)
     assert option == page.filter_value(option)
+    browser.get_screenshot_as_file(f'screenshots/filter.png')
+
 
 
 
