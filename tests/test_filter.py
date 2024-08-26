@@ -5,8 +5,8 @@ from utils import highlight
 
 @pytest.mark.parametrize(
     'option', [
-        # 'za', 'hilo', 'az',
-        'lohi'
+        # 'za', 'lohi', 'az',
+        'hilo'
     ]
 )
 def test_filter(browser, option):
