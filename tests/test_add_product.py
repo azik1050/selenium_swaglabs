@@ -1,7 +1,7 @@
 from pages.inventory import InventoryPage
 from pages.cart import CartPage
 from confest import browser
-
+from utils import highlight
 
 def test_add_product(browser):
     inventory_page = InventoryPage(browser)
@@ -11,4 +11,5 @@ def test_add_product(browser):
 
     cart_page = CartPage(browser)
     assert type(cart_page.product_header.text) is str
+    highlight(cart_page.product_header, browser)
     browser.get_screenshot_as_file(f'screenshots/add_product.png')

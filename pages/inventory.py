@@ -8,6 +8,11 @@ class InventoryPage:
         self.browser = browser
 
     @property
+    def filter(self):
+        element = self.browser.find_element(By.CLASS_NAME, 'select_container')
+        return element
+
+    @property
     def _find_filter(self):
         dropdown = self.browser.find_element(By.XPATH, "//select[@data-test='product-sort-container']")
         _filter = Select(dropdown)

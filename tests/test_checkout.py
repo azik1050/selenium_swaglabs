@@ -1,4 +1,4 @@
-from random import randint
+from utils import highlight
 from pages.inventory import InventoryPage
 from pages.cart import CartPage
 from pages.checkout import CheckoutPage
@@ -26,7 +26,8 @@ def test_checkout_fill(data, browser):
     checkout_page = CheckoutPage(browser)
     checkout_page.submit_form(data)
     checkout_page.finnish_button.click()
-    assert checkout_page.success_message == 'Thank you for your order!'
+    assert checkout_page.success_header.text == 'Thank you for your order!'
+    highlight(checkout_page.success_header, browser)
     browser.get_screenshot_as_file(f'screenshots/checkout.png')
 
 

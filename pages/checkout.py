@@ -21,7 +21,7 @@ class CheckoutPage:
         return button
 
     @property
-    def success_message(self):
-        message = self.browser.find_element(By.XPATH, "//h2[@data-test='complete-header']")
-        return message.text
+    def success_header(self):
+        header = self.browser.find_element(By.XPATH, "//h2[@data-test='complete-header']")
+        return header
 
